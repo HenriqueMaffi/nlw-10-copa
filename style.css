@@ -7,8 +7,9 @@
 :root {
   --card-color-primary: #f7dd43;
   --card-title-border-color: #746615;
-  --card-bg-color: #1d1c19;
-  --bg: url(./assets/bg-yellow.svg);
+  /* --card-bg-color: #1d1c19; */
+  --card-bg-color: #412424;
+  --bg: url(./assets/bg-red.jpg);
 }
 
 body.blue {
@@ -29,14 +30,21 @@ ul {
   list-style: none;
 }
 
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
 body {
   /* background-color: #121214;
   background-image: var(--bg);
-  background-position: center;
+  background-position-y: center;
+  background-position-x: -735px;
   background-repeat: no-repeat;
   background-size: cover; */
 
-  background: #121214 var(--bg) no-repeat center/cover;
+  background: #121214 var(--bg) no-repeat left center/cover;
+  margin-bottom: 100px;
 }
 
 body * {
@@ -47,6 +55,9 @@ body * {
   width: fit-content;
   margin: auto;
   padding-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -54,13 +65,25 @@ header {
   text-align: center;
 }
 
+.cup-logo {
+  width: 316px;
+}
+
+header h1 {
+  color: #e1e1e6;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-shadow: #151518 1px 3px 10px;
+}
+
 #cards {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 65px 45px;
 }
 
 .card {
+  max-width: 316px;
   padding: 32px 23px;
   text-align: center;
   background: var(--card-bg-color);
@@ -95,7 +118,7 @@ header {
   width: 270px;
 }
 
-.card ul li {
+.game-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,26 +126,39 @@ header {
 
 .card ul li + li {
   padding-top: 24px;
-  border-top: 1px solid #323238;
+  border-top: 1px solid #664d07;
+}
+
+.group {
+  font-size: 13px;
 }
 
 .card ul li strong {
   font-weight: 900;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 125%;
   text-align: center;
   color: #e1e1e6;
 }
+.player-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6px;
+  width: 89px;
+}
 
-.card h2:hover,
-.card ul li strong:hover,
-.card ul li img:hover {
+.game {
+  color: #e1e1e6;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.game-card:hover {
   transform: scale(1.1);
 }
 
-.card h2,
-.card ul li strong,
-.card ul li img {
+.game-card {
   transition: transform 0.3s;
 }
 
@@ -143,8 +179,9 @@ header {
 
 @media (min-width: 700px) {
   #cards {
-    max-width: 670px;
+    max-width: 1800px;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
